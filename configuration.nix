@@ -144,8 +144,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # shells
-  environment.shells = with pkgs; [ bash ]; #to add other shells later
-  users.defaultUserShell = pkgs.bash;
-  # programs.bash.enable = true;
+  environment.shells = with pkgs; [ bash ];
 }
 

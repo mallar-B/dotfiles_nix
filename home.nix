@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+
+  imports = [
+    ./user/shell_conf.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "mallarb";
@@ -65,15 +69,7 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-
-  #shell config
-  programs.bash ={
-    enable = true;
-    shellAliases = {
-      ll = "ls -l";
-      ".." = "cd ..";
-    };
-  };
+ 
 
   # github cli
   programs.gh.enable = true;
