@@ -8,12 +8,13 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./system/sddm_conf.nix
+      ./system/grub_conf.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.grub.device = "nodev";
+  # Boot loader.
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.efiSupport = true;
+  boot.kernelParams = ["video=1920x1080"];
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -96,6 +97,9 @@
 	fuzzel
 	git
 	xorg.xrandr
+	libsForQt5.sddm
+	wlr-randr
+	lightdm
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -146,4 +150,3 @@
   # shells
   environment.shells = with pkgs; [ bash ];
 }
-
