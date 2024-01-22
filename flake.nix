@@ -10,6 +10,9 @@
 
   outputs = { self, nixpkgs, home-manager, ... }:
     let
+      systemSettings = {
+        profile = "main";
+      };
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
@@ -17,13 +20,13 @@
     nixosConfigurations = {
       MAIN = lib.nixosSystem {
         inherit system;
-	modules = [ ./configuration.nix ];
+	modules = [ (./. + "/profiles"+("/"+systemSettings.profile)+"/configuration.nix") ];
       };
     };
     homeConfigurations = {
       mallarb = home-manager.lib.homeManagerConfiguration{
 	inherit pkgs;
-	modules = [ ./home.nix ];	
+	modules = [ (./. + "/profiles"+("/"+systemSettings.profile)+"/home.nix") ];	
       };
     };
   };

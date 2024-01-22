@@ -3,13 +3,14 @@
     let
      myAliases = {
       ll = "ls -al";
-      ".." = "cd .."; 
+      ".." = "cd ..";
+      "nshell" = "nix-shell -p";
     };
     in
     {
       programs.bash = {
-  	enable = true;
-	enableCompletion = true;
-	shellAliases = myAliases;
+  	    enable = true;
+        enableCompletion = true;
+        shellAliases = myAliases;
       };
     }
