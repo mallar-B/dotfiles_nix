@@ -13,6 +13,17 @@
       systemSettings = {
         profile = "main";
       };
+
+      userSettings = {
+        office = {
+          word = "abiword";
+        };
+        browser = {
+          default = "floorp";
+          secondary = "ungoogled-chromium";
+        };
+      };
+
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
@@ -25,7 +36,13 @@
     };
     homeConfigurations = {
       mallarb = home-manager.lib.homeManagerConfiguration{
-	inherit pkgs;
+        inherit pkgs;  
+        extraSpecialArgs = {
+          inherit systemSettings;
+          inherit userSettings;
+        };  
+
+
 	modules = [ (./. + "/profiles"+("/"+systemSettings.profile)+"/home.nix") ];	
       };
     };

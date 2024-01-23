@@ -1,9 +1,13 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
 
   imports = [
     ../../user/shell_conf.nix
+    (./. + "../../../user/apps/office"+("/"+userSettings.office.word)+".nix")
+    ../../user/apps/browsers/default.nix
+    (./. + "../../../user/apps/browsers"+("/"+userSettings.browser.default)+".nix")
+    (./. + "../../../user/apps/browsers"+("/"+userSettings.browser.secondary)+".nix")
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -23,7 +27,7 @@
   # environment.
   home.packages = with pkgs; [
     btop
-    chromium
+    # chromium
     dolphin
     dunst
     eww
@@ -44,6 +48,13 @@
     waybar
     wget
     wofi
+
+    libsForQt5.kio-extras
+    libsForQt5.breeze-icons
+    breeze-icons
+
+    # cloudflare-warp
+
     
     
     # gnomeExtensions.gsconnect
@@ -88,9 +99,9 @@
   #
   #  /etc/profiles/per-user/mallarb/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
+  # home.sessionVariables = {
+  #   # EDITOR = "emacs";
+  # };
  
 
   # github cli
@@ -105,8 +116,6 @@
   programs.home-manager.enable = true;
 
 
-
-  services.gnome-keyring.enable = true;
 
 }
   
