@@ -42,16 +42,28 @@
     pavucontrol
     qt5ct
     smplayer
+    swayidle
     swaylock
     swww
     vscodium
     waybar
     wget
     wofi
+    neofetch    
 
     libsForQt5.kio-extras
     libsForQt5.breeze-icons
     breeze-icons
+
+    feh # simple image viewer
+    grim
+    slurp
+    wl-clipboard
+
+    font-awesome_5
+    mpd
+    pywal
+    sassc
 
     # cloudflare-warp
 
@@ -76,10 +88,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
+    
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -102,6 +111,14 @@
   # home.sessionVariables = {
   #   # EDITOR = "emacs";
   # };
+
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 22;
+};
  
 
   # github cli
@@ -115,7 +132,8 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-
-
+  services.mpd.enable = true;
+  services.mpd.network.listenAddress = "any";
+  services.mpd.musicDirectory = "/home/mallarb/Music";
 }
   

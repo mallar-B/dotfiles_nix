@@ -20,7 +20,7 @@
         };
         browser = {
           default = "floorp";
-          secondary = "ungoogled-chromium";
+          secondary = "librewolf";
         };
       };
 

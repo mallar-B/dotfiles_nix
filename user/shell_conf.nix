@@ -5,7 +5,8 @@
       ll = "ls -al";
       ".." = "cd ..";
       "nshell" = "nix-shell -p";
-      "hsf" = "home-manager switch --flake .";
+      "hmsf" = "home-manager switch --flake";
+      "nrfs" = "sudo nixos-rebuild switch --flake";
     };
     in
     {

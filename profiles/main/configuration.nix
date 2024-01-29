@@ -154,7 +154,12 @@
   # signing = {
   #   key = null; # GnuPG decides what signing key to use depending on commit’s author details
   #   signByDefault = true;
-  # };
-};
+  };
 
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
 }
+

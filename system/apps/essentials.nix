@@ -4,11 +4,11 @@
     foot
     gh
     git
+    gnome.gnome-keyring #necessary for gui authentications like gh-desktop
     sddm
     tree
     wlr-randr
     xorg.xrandr  
-    gnome.gnome-keyring
     libsecret
     polkit  
 
