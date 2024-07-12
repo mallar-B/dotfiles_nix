@@ -3,7 +3,7 @@
   ''
   $terminal = foot 
   $fileManager = dolphin
-  $menu = tofi-drun --drun-launch=true
+  $menu = tofi-drun --drun-launch=true --fuzzy-match=true
   $mainMod = "SUPER"  
 
   #############################

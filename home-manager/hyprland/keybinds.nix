@@ -61,5 +61,11 @@
   # Grouping windows as tabs
   bind = $mainMod, T, togglegroup
   bind = $mainMod, Tab,changegroupactive,f
-  '';
+
+  # Reload waybar
+  bind = $mainMod CONTROL, R, exec, pgrep waybar && pkill waybar || waybar &
+
+  # Powermenu
+  bind = $mainMod, L, exec, wlogout
+ '';
 }

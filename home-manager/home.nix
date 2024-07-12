@@ -17,7 +17,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs;[
-    ags ## bar and widgets
     dolphin
     grim
     slurp
@@ -32,12 +31,15 @@
     gruvbox-dark-gtk
     gnome.gnome-tweaks
     gruvbox-dark-icons-gtk
-    kde-gruvbox
     qt5ct
     qt6ct
     swww
     cloudflare-warp
-
+    swaylock-effects
+    qbittorrent
+    whatsapp-for-linux
+    telegram-desktop
+    
  # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -53,20 +55,19 @@
   ];
 
   gtk.theme.name = "gruvbox-dark-gtk";
-  home.sessionVariables = {
-    QT_STYLE_OVERRIDE = "kde-gruvbox";
-  };
-
+  qt.enable = true;
+  
   services.kdeconnect.enable = true;
   services.kdeconnect.indicator = true;
   services.gnome-keyring.enable = true;
-  programs.swaylock.enable = true;
+  # programs.swaylock.enable = true;
   programs.feh.enable = true;
   programs.tofi.enable = true;
   programs.fzf.enable = true;
   programs.starship.enable = true;
-  programs.starship.settings = pkgs.lib.importTOML ~/Github/dotfiles_nix/configs/starship.toml;
-
+  programs.starship.settings = pkgs.lib.importTOML ~/GitHub/dotfiles_nix/configs/starship.toml;
+  programs.waybar.enable = true;
+  programs.wlogout.enable = true;
  # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
