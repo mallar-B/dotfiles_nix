@@ -1,2 +1,2 @@
-./result/**
-./modules/hardware-configuration.nix
+result/**
+modules/hardware-configuration.nix
