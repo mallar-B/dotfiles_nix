@@ -9,6 +9,7 @@
     gfxmodeEfi = "1920x1080";
   };
   boot.kernelParams = [ "video=1920x1080" "loglevel=5" ];
+  boot.supportedFilesystems = [ "ntfs" ];
   systemd.tpm2.enable = false;
 
   # networks

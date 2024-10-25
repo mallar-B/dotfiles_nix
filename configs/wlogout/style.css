@@ -1,0 +1,109 @@
+window {
+    font-family: JuliaMono;
+    font-size: 10pt;
+    color: #ebdbb2; /* text */
+    background-color: rgba(40, 40, 40, 0.76);
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 2px;
+    border-color: #ebdbb2;
+    background-color: rgba(40, 40, 40, 0.76);
+    margin: 10px;
+    transition:
+        box-shadow 0.3s ease-in-out,
+        background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(104, 157, 106, 0.92);
+    color: #282828;
+}
+
+button:focus {
+    background-color: #ebdbb2;
+    color: #282828;
+}
+
+#lock {
+    background-image: image(url("./lock.png"));
+    background-size: 120px 120px;
+}
+#lock:focus {
+    background-image: image(url("./lock-hover.png"));
+    background-size: 120px 120px;
+}
+#lock:hover {
+    background-image: image(url("./lock-hover.png"));
+    background-size: 120px 120px;
+}
+
+#logout {
+    background-image: image(url("./logout.png"));
+    background-size: 120px 120px;
+}
+#logout:focus {
+    background-image: image(url("./logout-hover.png"));
+    background-size: 120px 120px;
+}
+#logout:hover {
+    background-image: image(url("./logout-hover.png"));
+    background-size: 120px 120px;
+}
+
+#suspend {
+    background-image: image(url("./sleep.png"));
+    background-size: 120px 120px;
+}
+#suspend:focus {
+    background-image: image(url("./sleep-hover.png"));
+    background-size: 120px 120px;
+}
+#suspend:hover {
+    background-image: image(url("./sleep-hover.png"));
+    background-size: 120px 120px;
+}
+
+#shutdown {
+    background-image: image(url("./power.png"));
+    background-size: 120px 120px;
+}
+#shutdown:focus {
+    background-image: image(url("./power-hover.png"));
+    background-size: 120px 120px;
+}
+#shutdown:hover {
+    background-image: image(url("./power-hover.png"));
+    background-size: 120px 120px;
+}
+
+#reboot {
+    background-image: image(url("./restart.png"));
+    background-size: 120px 120px;
+}
+#reboot:focus {
+    background-image: image(url("./restart-hover.png"));
+    background-size: 120px 120px;
+}
+#reboot:hover {
+    background-image: image(url("./restart-hover.png"));
+    background-size: 120px 120px;
+}
+
+#windows {
+    background-image: image(url("./windows.png"));
+    background-size: 120px 120px;
+}
+#windows:focus {
+    background-image: image(url("./windows-hover.png"));
+    background-size: 120px 120px;
+}
+#windows:hover {
+    background-image: image(url("./windows-hover.png"));
+    background-size: 120px 120px;
+}

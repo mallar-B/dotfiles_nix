@@ -21,6 +21,9 @@
         };
       backupFileExtension = "backup";
     };
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowBroken = true;
+  home-manager.useGlobalPkgs = true;
 
   system.stateVersion = "24.05"; 
 

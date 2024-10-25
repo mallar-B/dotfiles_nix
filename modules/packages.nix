@@ -12,25 +12,37 @@ in
     git
     neovim
     ntfs3g
+    vim
     wget
     zig
     zsh
     cargo
+    python311Packages.pip
+    python3
+    networkmanagerapplet
+    nodejs_22
+    where-is-my-sddm-theme
+    sddm
   ];
 
   ## user packages
   users.users.${user}.packages = with pkgs; [
     brave
-    foot
-    inputs.zen-browser.packages."${system}".default
+    firefox
+    # inputs.zen-browser.packages."${system}".default
     kitty
     localsend
+    feh
     mpv
     nemo
     pavucontrol
-    qbittorrent
-    rofi-wayland
-    wl-clipboard
     zoxide
+    cloudflare-warp
+    tmux
+    mate.mate-polkit
   ];
+fonts.packages = with pkgs; [
+  (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Iosevka"]; })
+  icomoon-feather
+];
 }
