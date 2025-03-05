@@ -71,7 +71,7 @@ alias ll='ls -l';
 alias cp='cp -r';
 alias cd='z';
 # Nix Aliases
-alias nnvim='nix run ~/.dotfiles/#nvim'
+alias nnvim='nix run ~/.dotfiles/modules/nixvim/.'
 alias nrsf='sudo nixos-rebuild switch --flake ~/.dotfiles/#default'
 
 # Shell integrations
