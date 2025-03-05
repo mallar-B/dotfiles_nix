@@ -5,5 +5,6 @@
     ./bufferline.nix 
     ./plugins/neo-tree.nix
     ./plugins/telescope.nix
+    ./plugins/lsp.nix
     ];
 }

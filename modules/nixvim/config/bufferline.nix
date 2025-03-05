@@ -1,4 +1,4 @@
-{pkgs,self, ...}: {
+{pkgs, ...}: {
   plugins = {
     gitsigns.enable = true;
     which-key.enable = true;
@@ -10,26 +10,6 @@
     lint.enable = true;
     lualine.enable = true;
     sleuth.enable = true;
-    cmp = {
-      enable = true;
-      autoEnableSources = false;
-      settings.sources = [
-	{ name = "nvim_lsp"; }
-	{ name = "path"; }
-	{ name = "buffer"; }
-      ];
-    };
-    cmp-nvim-lsp.enable = true;
-    cmp-path.enable = true;
-    cmp-buffer.enable = true;
-    conform-nvim.enable = true;
-    lsp = {
-      enable = true;
-      servers = {
-	ts_ls.enable = true;
-	tailwindcss.enable = true;
-      };
-    };
   };
   extraPlugins = with pkgs.vimPlugins; [
     {

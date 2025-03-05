@@ -1,4 +1,4 @@
-{ pkgs, inputs, userSettings, ... }:
+{ pkgs, userSettings, ... }:
 let
   user = userSettings.user;
 in

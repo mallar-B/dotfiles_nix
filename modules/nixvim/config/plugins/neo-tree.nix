@@ -10,4 +10,8 @@ plugins = {
     };
   };
 };
+keymaps = [{
+  key = "\\";
+  action = ":Neotree toggle<CR>";
+}];
 }
