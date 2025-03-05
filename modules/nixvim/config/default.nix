@@ -4,5 +4,6 @@
     ./options.nix
     ./bufferline.nix 
     ./plugins/neo-tree.nix
+    ./plugins/telescope.nix
     ];
 }

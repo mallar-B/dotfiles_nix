@@ -1,6 +1,5 @@
 {pkgs,self, ...}: {
   plugins = {
-    telescope.enable = true;
     gitsigns.enable = true;
     which-key.enable = true;
     lazydev.enable = true;
@@ -10,6 +9,7 @@
     indent-blankline.enable = true;
     lint.enable = true;
     lualine.enable = true;
+    sleuth.enable = true;
     cmp = {
       enable = true;
       autoEnableSources = false;
