@@ -5,7 +5,7 @@
 {
   imports =
     [ 
-      ./hardware-configuration.nix
+  (if builtins.pathExists ./modules/hardware-configuration.nix then ./modules/hardware-configuration.nix else "/etc/nixos/hardware-configuration.nix")
       ./packages.nix
       ./user.nix
       ./system.nix

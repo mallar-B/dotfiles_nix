@@ -13,7 +13,6 @@
   outputs = {
     self,
     nixpkgs,
-    nvf,
     ...
   } @ inputs: let
     userSettings = {
