@@ -1,2 +1,3 @@
 result/**
-# modules/hardware-configuration.nix
+/modules/hardware-configuration.nix
+/configs/tmux/plugins/

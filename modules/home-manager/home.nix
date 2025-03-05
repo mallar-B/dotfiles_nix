@@ -1,40 +1,36 @@
-{ config, pkgs, inputs, ... }:
-
-{
-  home.username = "mallarb";
-  home.homeDirectory = "/home/mallarb";
-
-  home.stateVersion = "24.05";
+{pkgs,inputs,config, ...}: {
+  home.username = "mallar";
+  home.homeDirectory = "/home/mallar";
+  home.stateVersion = "24.05"; 
 
   home.packages = with pkgs; [
-    waybar
-    hypridle
-    rofi-wayland
-    wl-clipboard
+    discord
     foot
+    github-desktop
+    grim
+    hypridle
     hyprlock
     hyprpaper
-    grim
-    slurp
-    libnotify
     hyprpicker
+    libnotify
     oh-my-zsh
-    trashy
-    telegram-desktop
-    discord
-    xdg-desktop-portal-hyprland
-    github-desktop
+    pulseaudioFull
     python312Packages.subliminal
     qbittorrent
-    vimPlugins.LazyVim
-    pulseaudioFull
-    wlogout
+    rofi-wayland
+    slurp
     swww
+    telegram-desktop
+    vimPlugins.LazyVim
+    waybar
+    wl-clipboard
+    wlogout
+    xdg-desktop-portal-hyprland
   ];
 
   home.file = {
     ".config/hypr".source = ../../configs/hypr;
-    ".config/nvim".source = ../../configs/nvim;
+    # ".config/nvim".source = ../../configd/nvim;
     ".config/foot".source = ../../configs/foot;
     ".config/kitty".source = ../../configs/kitty;
     ".config/mpv".source = ../../configs/mpv;
@@ -42,19 +38,27 @@
     ".config/waybar".source = ../../configs/waybar;
     ".config/rofi".source = ../../configs/rofi;
     ".config/wlogout".source = ../../configs/wlogout;
-    ".local/scripts".source = ../../scripts;
+    ".config/tmux".source = ../../configs/tmux;
+    ".local/bin".source = ../../scripts;
+    ".zshrc".source = ../../configs/.zshrc;
   };
 
   # theme
-  gtk = { 
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
+  gtk = {
     enable = true;
     theme = {
-      package = pkgs.graphite-gtk-theme;
-      name = "Graphite-Dark";
+      package = pkgs.gruvbox-material-gtk-theme;
+      name = "Gruvbox-Material-Dark";
     };
     cursorTheme = {
-      package = pkgs.bibata-cursors-translucent;
-      name = "Bibata_Ghost";
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Original-Classic";
     };
     iconTheme = {
       package = pkgs.tela-icon-theme;
@@ -66,29 +70,27 @@
 
   # shell
   programs.zsh = {
-  enable = true;
-  enableCompletion = true;
-  autosuggestion.enable = true;
-  syntaxHighlighting.enable = true;
-
-  shellAliases = {
-    ll = "ls -l";
-    update = "sudo nixos-rebuild switch";
-    rm = "trash";
-    cp = "cp -r";
-    cd = "z";
-  };
-  history = {
-    size = 10000;
-    path = "${config.xdg.dataHome}/zsh/history";
-  };
-  oh-my-zsh = {
     enable = true;
-    plugins = [ "git" "colored-man-pages" "sudo" "zoxide"];
-    theme = "gnzh";
-  };
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
 
-};
+    shellAliases = {
+      ll = "ls -l";
+      update = "sudo nixos-rebuild switch";
+      cp = "cp -r";
+      cd = "z";
+    };
+    # history = {
+    #   size = 10000;
+    #   path = "${config.xdg.dataHome}/zsh/history";
+    # };
+    # oh-my-zsh = {
+    #   enable = true;
+    #   plugins = [ "git" "colored-man-pages" "sudo" "zoxide"];
+    #   theme = "gnzh";
+    # };
+  };
 
   programs.home-manager.enable = true;
 }
