@@ -54,7 +54,6 @@
     cmp-path.enable = true;
     cmp-buffer.enable = true;
     cmp_luasnip.enable = true;
-    conform-nvim.enable = true;
   };
   autoCmd = [{
     event = "LspAttach";
