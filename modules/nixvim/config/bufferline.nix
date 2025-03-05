@@ -9,6 +9,7 @@
     dap.enable = true;
     indent-blankline.enable = true;
     lint.enable = true;
+    lualine.enable = true;
     cmp = {
       enable = true;
       autoEnableSources = false;
