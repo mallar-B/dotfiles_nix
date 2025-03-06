@@ -1,5 +1,6 @@
 {
   plugins = {
+    lazydev.enable = true;
     luasnip.enable = true;
     lsp = {
       enable = true;

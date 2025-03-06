@@ -1,4 +1,4 @@
-{pkgs,inputs,config, ...}: {
+{pkgs, ...}: {
   home.username = "mallar";
   home.homeDirectory = "/home/mallar";
   home.stateVersion = "24.05"; 

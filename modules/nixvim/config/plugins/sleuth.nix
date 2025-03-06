@@ -1,0 +1,3 @@
+{
+  sleuth.enable = true;
+}
