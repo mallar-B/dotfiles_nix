@@ -12,6 +12,7 @@
     ./plugins/lsp.nix
     ./plugins/lualine.nix
     ./plugins/neo-tree.nix
+    ./plugins/nvim-surround.nix
     ./plugins/sleuth.nix
     ./plugins/snacks.nix
     ./plugins/tailwind-tools.nix
