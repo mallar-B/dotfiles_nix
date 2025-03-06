@@ -8,5 +8,6 @@
     ./plugins/lsp.nix
     ./plugins/formatter.nix
     ./plugins/gitsigns.nix
+    ./plugins/which-key.nix
     ];
 }

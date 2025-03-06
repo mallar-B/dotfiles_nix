@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   plugins = {
-    which-key.enable = true;
     lazydev.enable = true;
     treesitter.enable = true;
     nvim-autopairs.enable = true;
