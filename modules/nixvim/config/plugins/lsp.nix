@@ -10,7 +10,7 @@
 	rust_analyzer.enable = true;
 	rust_analyzer.installCargo = true;
 	rust_analyzer.installRustc = true;
-	tailwindcss.enable = true;
+	# tailwindcss.enable = true; # tailwind-tools will manage 
 	ts_ls.enable = true;
       };
     };

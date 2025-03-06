@@ -14,6 +14,7 @@
     ./plugins/neo-tree.nix
     ./plugins/sleuth.nix
     ./plugins/snacks.nix
+    ./plugins/tailwind-tools.nix
     ./plugins/telescope.nix
     ./plugins/terminal.nix
     ./plugins/which-key.nix
