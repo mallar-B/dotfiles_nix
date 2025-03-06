@@ -15,6 +15,7 @@
     ./plugins/sleuth.nix
     ./plugins/snacks.nix
     ./plugins/telescope.nix
+    ./plugins/terminal.nix
     ./plugins/which-key.nix
     ];
 }

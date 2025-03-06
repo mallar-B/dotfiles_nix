@@ -36,7 +36,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # currently not working
 
 # Load completions
-autoload -U compinit && compinit
+autoload -U compinit && compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
