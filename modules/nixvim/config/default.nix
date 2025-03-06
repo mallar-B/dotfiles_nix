@@ -13,6 +13,7 @@
     ./plugins/lualine.nix
     ./plugins/neo-tree.nix
     ./plugins/sleuth.nix
+    ./plugins/snacks.nix
     ./plugins/telescope.nix
     ./plugins/which-key.nix
     ];
