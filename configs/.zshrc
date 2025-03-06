@@ -73,6 +73,27 @@ alias cd='z';
 # Nix Aliases
 alias nnvim='nix run ~/.dotfiles/modules/nixvim/.'
 alias nrsf='sudo nixos-rebuild switch --flake ~/.dotfiles/#default'
+# nixvim
+nnvim() {
+  # Define the path to the nvim binary
+  local nvim_binary=".dotfiles/modules/nixvim/result/bin/nvim"
+
+  # Check if the nvim binary exists
+  if [[ -f "$nvim_binary" ]]; then
+    echo "Found nvim binary at $nvim_binary. Running nvim..."
+    "$nvim_binary" "$@"
+  else
+    echo "nvim binary not found. Building using nix..."
+    # Run nix build if the binary doesn't exist
+    if nix build .dotfiles/modules/nixvim; then
+      echo "Build successful! Running nvim..."
+      "$nvim_binary" "$@"
+    else
+      echo "Error: Failed to build nvim with nix." >&2
+      return 1
+    fi
+  fi
+}
 
 # Shell integrations
 ## fzf
