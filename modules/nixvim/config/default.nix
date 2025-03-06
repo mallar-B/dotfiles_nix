@@ -7,5 +7,6 @@
     ./plugins/telescope.nix
     ./plugins/lsp.nix
     ./plugins/formatter.nix
+    ./plugins/gitsigns.nix
     ];
 }

@@ -40,7 +40,7 @@
   {
     mode = "n";
     key = "<leader>sd";
-    action = ":Telescope diagnostic<CR>";
+    action = ":Telescope diagnostics<CR>";
     options.desc = "[S]earch [D]iagnostics";
   }
   {

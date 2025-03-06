@@ -71,6 +71,7 @@
         options = {
           silent = true;
           noremap = true;
+          desc = "[F]ormat this buffer";
         };
       }
     ];

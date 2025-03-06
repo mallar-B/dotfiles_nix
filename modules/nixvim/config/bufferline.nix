@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   plugins = {
-    gitsigns.enable = true;
     which-key.enable = true;
     lazydev.enable = true;
     treesitter.enable = true;
