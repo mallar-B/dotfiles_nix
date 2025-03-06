@@ -1,4 +1,4 @@
-{self,config, ...}:{
+{
   globals = {
     maplocalleader = " ";
     mapleader = " ";
@@ -39,8 +39,14 @@
     {
       mode = "n";
       key = "<leader>q";
-      action = '':lua vim.diagnostic.setloclist()''; 
+      action = '':lua vim.diagnostic.setloclist()<CR>''; 
       options.desc = "Open diagnostic [Q]uickfix list";
+    }
+    {
+      mode = "n";
+      key = "<leader>e";
+      action = '':lua vim.diagnostic.open_float()''; 
+      options.desc = "Show [E]rror message under cursor";
     }
     {
       mode = "n";
@@ -65,9 +71,10 @@
 
   # copy to clipboard
     {
-      mode = "x"; # all visual mode
-      key = "<CS-c>";
-      action = "\"+y";
+      mode = "x";  # All visual modes
+      key = "<C-c>";
+      action = ":'<,'>y +<CR>"; 
+      options.desc = "Copy to system clipboard";
     }
   ];
   
