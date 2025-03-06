@@ -43,6 +43,7 @@ in
     nemo
     pavucontrol
     tmux
+    vivaldi
     zoxide
   ];
 fonts.packages = with pkgs; [

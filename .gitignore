@@ -1,4 +1,4 @@
 result/**
 modules/hardware-configuration.nix
 configs/tmux/plugins/
-modules/nixvim/result/
+modules/nixvim/result

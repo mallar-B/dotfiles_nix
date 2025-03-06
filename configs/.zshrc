@@ -71,26 +71,26 @@ alias ll='ls -l';
 alias cp='cp -r';
 alias cd='z';
 # Nix Aliases
-alias nnvim='nix run ~/.dotfiles/modules/nixvim/.'
+# alias nnvim='nix run ~/.dotfiles/modules/nixvim/.'
 alias nrsf='sudo nixos-rebuild switch --flake ~/.dotfiles/#default'
 # nixvim
 nnvim() {
-  # Define the path to the nvim binary
-  local nvim_binary=".dotfiles/modules/nixvim/result/bin/nvim"
+  local nvim_binary="$HOME/.dotfiles/modules/nixvim/result/bin/nvim"
+  local nix_path="$HOME/.dotfiles/modules/nixvim"
 
   # Check if the nvim binary exists
   if [[ -f "$nvim_binary" ]]; then
     echo "Found nvim binary at $nvim_binary. Running nvim..."
-    "$nvim_binary" "$@"
+    "$nvim_binary" "$@"  # Pass any arguments to the nvim binary
   else
-    echo "nvim binary not found. Building using nix..."
+    echo "nvim binary not found at $nvim_binary. Building using nix..."
     # Run nix build if the binary doesn't exist
-    if nix build .dotfiles/modules/nixvim; then
+    if nix build "$nix_path" && mv result "$nix_path"; then
       echo "Build successful! Running nvim..."
-      "$nvim_binary" "$@"
+      "$nvim_binary" "$@"  # Run the newly built nvim binary
     else
       echo "Error: Failed to build nvim with nix." >&2
-      return 1
+      return 1  # Return a non-zero status code to indicate failure
     fi
   fi
 }
