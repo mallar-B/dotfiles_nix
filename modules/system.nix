@@ -1,5 +1,4 @@
-{ ... }:
-{
+{pkgs, ...}: {
   # grub
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -8,14 +7,32 @@
     efiSupport = true;
     gfxmodeEfi = "1920x1080";
   };
-  boot.kernelParams = [ "video=1920x1080" "loglevel=5" ];
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.kernelParams = ["video=1920x1080" "loglevel=5"];
+  boot.supportedFilesystems = ["ntfs"];
+
   systemd.tpm2.enable = false;
 
+  # polkit_gnome
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = ["graphical-session.target"];
+      wants = ["graphical-session.target"];
+      after = ["graphical-session.target"];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+  };
+
   # networks
-  networking.hostName = "nix"; 
-  networking.networkmanager.enable = true;  
-  
+  networking.hostName = "nix";
+  networking.networkmanager.enable = true;
+
   # timezone and locale
   time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -26,7 +43,12 @@
 
   # gui
   services.xserver.enable = true;
-  services.xserver.resolutions = [{x = 1920; y = 1080;}];
+  services.xserver.resolutions = [
+    {
+      x = 1920;
+      y = 1080;
+    }
+  ];
   services.displayManager.sddm.enable = true;
   programs.hyprland.enable = true;
 
@@ -45,5 +67,4 @@
   services.openssh.enable = true;
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-
 }

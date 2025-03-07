@@ -43,7 +43,8 @@ in
     firefox
     kitty
     localsend
-    mate.mate-polkit
+    # mate.mate-polkit
+    polkit_gnome
     mpv
     nemo
     pavucontrol
