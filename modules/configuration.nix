@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, userSettings, ... }:
+{ userSettings, ... }:
   let
     user = userSettings.user;
   in 
@@ -9,6 +9,7 @@
       ./packages.nix
       ./user.nix
       ./system.nix
+      ./services.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

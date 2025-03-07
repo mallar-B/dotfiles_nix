@@ -92,5 +92,8 @@
     # };
   };
 
+  services.udiskie.enable = true;
+  services.udiskie.tray= "auto";
+
   programs.home-manager.enable = true;
 }

@@ -5,7 +5,7 @@ in
 {
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "storage" ];
     shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
