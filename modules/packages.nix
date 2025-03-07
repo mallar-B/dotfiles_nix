@@ -12,6 +12,8 @@ in
     fzf
     gh
     git
+    gnome.gvfs
+    gvfs
     kdePackages.sddm
     lua
     neovim # Different from nvf in flakes
@@ -21,6 +23,9 @@ in
     python3
     python311Packages.pip
     ripgrep
+    udiskie
+    udisks
+    udisks2
     unzip
     vim
     wget
