@@ -1,5 +1,4 @@
-
-{
+{pkgs, ...}: {
   plugins = {
     tailwind-tools.enable = true;
     tailwind-tools.settings = {
@@ -8,4 +7,14 @@
       server.override = true;
     };
   };
+  extraPackages = [
+    pkgs.tailwindcss-language-server
+  ];
+  extraConfigLua = ''
+    require("lspconfig").tailwindcss.setup(
+      {root_dir = require("lspconfig").util.root_pattern("package.json", ".git"),
+
+      }
+    )
+  '';
 }

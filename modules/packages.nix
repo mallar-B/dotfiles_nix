@@ -15,6 +15,7 @@ in
     gnome.gvfs
     gvfs
     kdePackages.sddm
+    lazygit
     lua
     neovim # Different from nvf in flakes
     networkmanagerapplet
@@ -23,13 +24,13 @@ in
     python3
     python311Packages.pip
     ripgrep
+    tailwindcss-language-server
     udiskie
     udisks
     udisks2
     unzip
     vim
     wget
-    where-is-my-sddm-theme
     zig
     zsh
   ];

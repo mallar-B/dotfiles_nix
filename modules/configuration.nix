@@ -1,4 +1,8 @@
-{userSettings, ...}: let
+{
+  pkgs,
+  userSettings,
+  ...
+}: let
   user = userSettings.user;
 in {
   imports = [
@@ -22,6 +26,13 @@ in {
     };
     backupFileExtension = "backup";
   };
+
+  # sddm
+  environment.systemPackages = with pkgs; [
+    where-is-my-sddm-theme
+    libsForQt5.qt5.qtgraphicaleffects
+  ];
+
   nixpkgs.config = {
     allowBroken = true;
     allowUnfree = true;
