@@ -4,6 +4,8 @@
   home.stateVersion = "24.05"; 
 
   home.packages = with pkgs; [
+    bitwarden
+    bitwarden-cli
     discord
     foot
     github-desktop
@@ -13,7 +15,7 @@
     hyprpaper
     hyprpicker
     libnotify
-    oh-my-zsh
+    obsidian
     pulseaudioFull
     python312Packages.subliminal
     qbittorrent
