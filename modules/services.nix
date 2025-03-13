@@ -1,6 +1,5 @@
-{ ... }:
-{
-  services.displayManager.sddm.theme = "where_is_my_sddm_theme";
+{pkgs, ...}: {
+  services.displayManager.sddm.theme = "${import ./sddm-theme.nix {inherit pkgs;}}";
   services.cloudflare-warp.enable = true;
   programs.nm-applet.enable = true;
   services.gvfs.enable = true;

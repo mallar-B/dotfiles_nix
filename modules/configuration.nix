@@ -27,11 +27,13 @@ in {
     backupFileExtension = "backup";
   };
 
-  # sddm
-  environment.systemPackages = with pkgs; [
-    where-is-my-sddm-theme
-    libsForQt5.qt5.qtgraphicaleffects
-  ];
+  # # sddm
+  # environment.systemPackages = with pkgs; [
+  #   where-is-my-sddm-theme
+  #   libsForQt5.qt5.qtgraphicaleffects
+  #   libsForQt5.qtgraphicaleffects
+  #   kdePackages.qt5compat
+  # ];
 
   nixpkgs.config = {
     allowBroken = true;
