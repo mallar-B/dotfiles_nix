@@ -2,6 +2,7 @@
   # Import all your configuration modules here
   imports = [ 
     ./options.nix
+    ./plugins/ai.nix
     ./plugins/autopairs.nix
     ./plugins/colorscheme.nix
     ./plugins/debug.nix

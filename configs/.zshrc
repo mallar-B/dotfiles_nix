@@ -47,7 +47,6 @@ bindkey -v
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-
 # History
 HISTSIZE=4000
 HISTFILE="${HOME}/.zsh_history"
@@ -77,6 +76,11 @@ alias nrsf='sudo nixos-rebuild switch --flake ~/.dotfiles/#default'
 nnvim() {
   local nvim_binary="$HOME/.dotfiles/modules/nixvim/result/bin/nvim"
   local nix_path="$HOME/.dotfiles/modules/nixvim"
+  local envPath="$HOME/.dotfiles/.env"
+
+  if [ ! -f envPath ];then
+    echo ".env does not exist"
+  fi
 
   # Check if the nvim binary exists
   if [[ -f "$nvim_binary" ]]; then
@@ -111,4 +115,3 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(zoxide init zsh)"
 export PATH="$PATH:/home/mallar/.local/bin"
-
