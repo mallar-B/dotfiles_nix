@@ -80,6 +80,8 @@ nnvim() {
 
   if [ ! -f $envPath ];then
     echo ".env does not exist"
+  else
+    export $(grep -v '^#' $envPath | xargs)
   fi
 
   # Check if the nvim binary exists
