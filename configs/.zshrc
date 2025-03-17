@@ -78,7 +78,7 @@ nnvim() {
   local nix_path="$HOME/.dotfiles/modules/nixvim"
   local envPath="$HOME/.dotfiles/.env"
 
-  if [ ! -f envPath ];then
+  if [ ! -f $envPath ];then
     echo ".env does not exist"
   fi
 
