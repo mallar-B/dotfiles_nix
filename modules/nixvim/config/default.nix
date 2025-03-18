@@ -5,6 +5,7 @@
     ./plugins/ai.nix
     ./plugins/autopairs.nix
     ./plugins/colorscheme.nix
+    ./plugins/comment.nix
     ./plugins/debug.nix
     ./plugins/formatter.nix
     ./plugins/gitsigns.nix
