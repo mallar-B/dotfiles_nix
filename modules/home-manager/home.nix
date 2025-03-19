@@ -16,6 +16,7 @@
     hyprpicker
     libnotify
     obsidian
+    postman
     pulseaudioFull
     python312Packages.subliminal
     qbittorrent
