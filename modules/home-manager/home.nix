@@ -16,6 +16,7 @@
     hyprpicker
     libnotify
     obsidian
+    pgadmin
     postman
     pulseaudioFull
     python312Packages.subliminal
