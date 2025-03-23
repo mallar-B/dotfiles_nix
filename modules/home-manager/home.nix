@@ -16,7 +16,8 @@
     hyprpicker
     libnotify
     obsidian
-    pgadmin
+    pgadmin4-desktopmode
+    postgresql
     postman
     pulseaudioFull
     python312Packages.subliminal
