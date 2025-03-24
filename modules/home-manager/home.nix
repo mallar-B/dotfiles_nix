@@ -15,6 +15,7 @@
     hyprpaper
     hyprpicker
     libnotify
+    libreoffice
     obsidian
     pgadmin4-desktopmode
     postgresql
