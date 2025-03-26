@@ -1,11 +1,12 @@
 {pkgs, ...}: {
   home.username = "mallar";
   home.homeDirectory = "/home/mallar";
-  home.stateVersion = "24.05"; 
+  home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
     bitwarden
     bitwarden-cli
+    cloudflared
     discord
     foot
     github-desktop
@@ -99,7 +100,7 @@
   };
 
   services.udiskie.enable = true;
-  services.udiskie.tray= "auto";
+  services.udiskie.tray = "auto";
 
   programs.home-manager.enable = true;
 }

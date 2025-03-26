@@ -5,4 +5,5 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.postgresql.enable = true;
+  services.cloudflared.enable = true;
 }
