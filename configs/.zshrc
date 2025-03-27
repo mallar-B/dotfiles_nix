@@ -91,7 +91,7 @@ nnvim() {
   else
     echo "nvim binary not found at $nvim_binary. Building using nix..."
     # Run nix build if the binary doesn't exist
-    if nix build "$nix_path" && mv result "$nix_path"; then
+    if nix build "$nix_path" --impure && mv result "$nix_path"; then
       echo "Build successful! Running nvim..."
       "$nvim_binary" "$@"  # Run the newly built nvim binary
     else
