@@ -51,6 +51,7 @@
   ];
   services.displayManager.sddm.enable = true;
   programs.hyprland.enable = true;
+  programs.hyprland.xwayland.enable = true;
 
   # sound
   services.pipewire = {
