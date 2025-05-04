@@ -13,6 +13,7 @@
     ./plugins/lint.nix
     ./plugins/lsp.nix
     ./plugins/lualine.nix
+    ./plugins/markview.nix
     ./plugins/neo-tree.nix
     ./plugins/nvim-surround.nix
     ./plugins/sleuth.nix
