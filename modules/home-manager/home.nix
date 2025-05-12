@@ -47,6 +47,7 @@
     ".config/rofi".source = ../../configs/rofi;
     ".config/wlogout".source = ../../configs/wlogout;
     ".config/tmux".source = ../../configs/tmux;
+    ".config/swaync".source = ../../configs/swaync;
     ".local/bin".source = ../../scripts;
     ".zshrc".source = ../../configs/.zshrc;
   };

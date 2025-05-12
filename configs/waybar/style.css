@@ -26,7 +26,6 @@ window#waybar {
 #memory,
 #cpu,
 #battery,
-#disk,
 #tray,
 #idle_inhibitor{
 	background: #292b2e;
@@ -64,9 +63,6 @@ window#waybar {
 #battery {
 	color: #859900;
 }
-#disk {
-	color: #b58900;
-}
 #idle_inhibitor{
   padding-right: 10px;
 }
@@ -76,9 +72,9 @@ window#waybar {
 #memory,
 #cpu,
 #battery,
-#disk,
-#idle_inhibitor{
-	padding: 0 10px;
+#idle_inhibitor,
+#custom-notification{
+  padding: 0 10px;
 }
 #tray{
   padding: 0 5px;
@@ -90,4 +86,11 @@ window#waybar {
 #custom-power{
   color: #cc241d;
   padding-right: 10px;
+}
+#custom-notification{
+  color: #268bd2;
+  background: #292b2e;
+}
+#custom-notification.dnd-none{
+  color: #cc241d;
 }

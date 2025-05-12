@@ -49,6 +49,7 @@ in
     mpv
     nemo
     pavucontrol
+    swaynotificationcenter
     tmux
     vivaldi
     zoxide
