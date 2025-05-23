@@ -25,6 +25,7 @@
     pulseaudioFull
     python312Packages.subliminal
     qbittorrent
+    qutebrowser
     rofi-wayland
     slurp
     swww
