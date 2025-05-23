@@ -49,6 +49,7 @@
     ".config/wlogout".source = ../../configs/wlogout;
     ".config/tmux".source = ../../configs/tmux;
     ".config/swaync".source = ../../configs/swaync;
+    ".config/qutebrowser".source = ../../configs/qutebrowser;
     ".local/bin".source = ../../scripts;
     ".zshrc".source = ../../configs/.zshrc;
   };
