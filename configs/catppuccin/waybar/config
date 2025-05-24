@@ -1,0 +1,107 @@
+// -*- mode: json -*-
+
+{
+	"layer": "top",
+	"position": "bottom",
+	"floating":true,
+	"margin-bottom": 5,
+	"margin-left": 15,
+	"margin-right": 15,
+
+	"modules-left": [
+		"hyprland/workspaces",
+		"custom/right-arrow-dark"
+	],
+
+	"modules-center": [
+		"clock#1",
+		"clock#2",
+		"clock#3",
+	],
+
+	"modules-right": [
+			"pulseaudio",
+			"memory",
+			"cpu",
+			"custom/notification",
+			"idle_inhibitor",
+			"tray",
+    			"custom/power",
+	],
+
+	"hyprland/workspaces": {
+		"disable-scroll": false,
+		"format": "{name}"
+	},
+
+	"clock#1": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%d-%m}",
+		"tooltip": false
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": "{icon}  {volume}%",
+		"format-muted": " MUTE",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 3,
+		"on-click": "pavucontrol",
+		"on-click-right": "pkill pavucontrol"
+	},
+	"memory": {
+		"interval": 5,
+		"format": "  {}%"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": " {usage:2}%"
+	},
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "",
+        "deactivated": ""
+    }
+	},
+	"tray": {
+		"icon-size": 20,
+    "spacing": 10
+	},
+  "custom/power":{
+    "format":" ",
+    "on-click": "wlogout -b 5"
+  },
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "<span foreground='red'><sup></sup></span>",
+			"none": "",
+			"dnd-notification": "<span foreground='red'><sup></sup></span>",
+			"dnd-none": "",
+			"inhibited-notification": "<span foreground='red'><sup></sup></span>",
+			"inhibited-none": "",
+			"dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+			"dnd-inhibited-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
+},

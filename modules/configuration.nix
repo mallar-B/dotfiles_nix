@@ -22,7 +22,7 @@ in {
 
   home-manager = {
     users = {
-      ${user} = import ./home-manager/home.nix;
+      ${user} = import ./home-manager/home.nix {inherit pkgs userSettings;};
     };
     backupFileExtension = "backup";
   };

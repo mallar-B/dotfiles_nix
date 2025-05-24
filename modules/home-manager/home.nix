@@ -1,6 +1,13 @@
-{pkgs, ...}: {
-  home.username = "mallar";
-  home.homeDirectory = "/home/mallar";
+{
+  pkgs,
+  userSettings,
+  ...
+}: let
+  themeName = userSettings.theme;
+  userName = userSettings.user;
+in {
+  home.username = userName;
+  home.homeDirectory = "/home/${userName}";
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
@@ -11,6 +18,7 @@
     foot
     github-desktop
     grim
+    imagemagick
     hypridle
     hyprlock
     hyprpaper
@@ -24,6 +32,7 @@
     postman
     pulseaudioFull
     python312Packages.subliminal
+    pywal16
     qbittorrent
     qutebrowser
     rofi-wayland
@@ -38,20 +47,20 @@
   ];
 
   home.file = {
-    ".config/hypr".source = ../../configs/hypr;
-    # ".config/nvim".source = ../../configd/nvim;
-    ".config/foot".source = ../../configs/foot;
-    ".config/kitty".source = ../../configs/kitty;
-    ".config/mpv".source = ../../configs/mpv;
-    ".config/nixpkgs".source = ../../configs/nixpkgs;
-    ".config/waybar".source = ../../configs/waybar;
-    ".config/rofi".source = ../../configs/rofi;
-    ".config/wlogout".source = ../../configs/wlogout;
-    ".config/tmux".source = ../../configs/tmux;
-    ".config/swaync".source = ../../configs/swaync;
-    ".config/qutebrowser".source = ../../configs/qutebrowser;
+    ".config/hypr".source = ../../configs/${themeName}/hypr;
+    # ".config/nvim".source = ../../configd/${themeName}/nvim;
+    ".config/foot".source = ../../configs/${themeName}/foot;
+    ".config/kitty".source = ../../configs/${themeName}/kitty;
+    ".config/mpv".source = ../../configs/${themeName}/mpv;
+    ".config/nixpkgs".source = ../../configs/${themeName}/nixpkgs;
+    ".config/waybar".source = ../../configs/${themeName}/waybar;
+    ".config/rofi".source = ../../configs/${themeName}/rofi;
+    ".config/wlogout".source = ../../configs/${themeName}/wlogout;
+    ".config/tmux".source = ../../configs/${themeName}/tmux;
+    ".config/swaync".source = ../../configs/${themeName}/swaync;
+    ".config/qutebrowser".source = ../../configs/${themeName}/qutebrowser;
     ".local/bin".source = ../../scripts;
-    ".zshrc".source = ../../configs/.zshrc;
+    ".zshrc".source = ../../configs/${themeName}/.zshrc;
   };
 
   # theme
@@ -63,17 +72,34 @@
 
   gtk = {
     enable = true;
-    theme = {
-      package = pkgs.gruvbox-material-gtk-theme;
-      name = "Gruvbox-Material-Dark";
+    theme =
+      if themeName == "gruvbox"
+      then {
+        package = pkgs.gruvbox-material-gtk-theme;
+        name = "Gruvbox-Material-Dark";
+      }
+      else if themeName == "catppuccin"
+      then {
+        package = pkgs.magnetic-catppuccin-gtk;
+        name = "Catppuccin-GTK-Dark";
+      }
+      else {
+        package = pkgs.gruvbox-material-gtk-theme;
+        name = "Gruvbox-Material-Dark";
+      };
+
+    iconTheme = {
+      package = pkgs.tela-icon-theme;
+      name =
+        if themeName == "gruvbox"
+        then "Tela-black"
+        else if themeName == "catppuccin"
+        then "Tela-dracula"
+        else "Tela-black";
     };
     cursorTheme = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Original-Classic";
-    };
-    iconTheme = {
-      package = pkgs.tela-icon-theme;
-      name = "Tela-black";
     };
   };
   qt.enable = true;

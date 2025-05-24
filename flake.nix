@@ -17,6 +17,7 @@
   } @ inputs: let
     userSettings = {
       user = "mallar";
+      theme = "catppuccin"; # gruvbox, catppuccin
     };
   in {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
