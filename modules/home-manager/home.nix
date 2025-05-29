@@ -59,6 +59,7 @@ in {
     ".config/tmux".source = ../../configs/${themeName}/tmux;
     ".config/swaync".source = ../../configs/${themeName}/swaync;
     ".config/qutebrowser".source = ../../configs/${themeName}/qutebrowser;
+    ".config/swayosd".source = ../../configs/${themeName}/swayosd;
     ".local/bin".source = ../../scripts;
     ".zshrc".source = ../../configs/${themeName}/.zshrc;
   };
