@@ -53,6 +53,7 @@ in {
     nemo
     pavucontrol
     swaynotificationcenter
+    swayosd
     tmux
     vivaldi
     zoxide
