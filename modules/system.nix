@@ -67,6 +67,6 @@
   };
   services.openssh.enable = true;
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [3000 3001 3002 5173 53317];
-  networking.firewall.allowedUDPPorts = [3000 3001 3002 5173 53317];
+  networking.firewall.allowedTCPPorts = [3000 3001 3002 5173 53317 8080 8081];
+  networking.firewall.allowedUDPPorts = [3000 3001 3002 5173 53317 8080 8081];
 }
