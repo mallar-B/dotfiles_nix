@@ -22,6 +22,7 @@ in {
     fastlane
     jdk17
     jdk21
+    xorg.libX11
   ];
   users.users.mallar.extraGroups = ["adbusers"];
 
