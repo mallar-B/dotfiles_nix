@@ -6,6 +6,7 @@
       document_colors.enabled = true;
       server.override = true;
     };
+    highlight-colors.enable = true;
   };
   extraPackages = [
     pkgs.tailwindcss-language-server

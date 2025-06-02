@@ -73,7 +73,7 @@
     {
       mode = "x";  # All visual modes
       key = "<C-c>";
-      action = ":'<,'>y +<CR>"; 
+      action = "\"+y"; 
       options.desc = "Copy to system clipboard";
     }
   ];
