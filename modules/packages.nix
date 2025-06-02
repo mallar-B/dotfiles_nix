@@ -17,8 +17,8 @@ in {
     git
     gnome.gvfs
     gvfs
-    kdePackages.sddm
     lazygit
+    libsForQt5.sddm
     lua
     neovim # Different from nvf in flakes
     networkmanagerapplet
@@ -27,6 +27,7 @@ in {
     python3
     python311Packages.pip
     ripgrep
+    sddm-chili-theme
     tailwindcss-language-server
     udiskie
     udisks
