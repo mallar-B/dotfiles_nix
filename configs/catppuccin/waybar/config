@@ -10,6 +10,7 @@
 
 	"modules-left": [
 		"hyprland/workspaces",
+		"hyprland/window",
 		"custom/right-arrow-dark"
 	],
 
@@ -20,13 +21,14 @@
 	],
 
 	"modules-right": [
-			"pulseaudio",
-			"memory",
-			"cpu",
-			"custom/notification",
-			"idle_inhibitor",
-			"tray",
-    			"custom/power",
+		"pulseaudio",
+		"memory",
+		"cpu",
+		"temperature",
+		"custom/notification",
+		"idle_inhibitor",
+		"tray",
+		"custom/power",
 	],
 
 	"hyprland/workspaces": {
@@ -46,6 +48,7 @@
 		"format": "{:%d-%m}",
 		"tooltip": false
 	},
+
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",
 		"format-bluetooth": "{icon}  {volume}%",
@@ -61,6 +64,7 @@
 		"on-click": "pavucontrol",
 		"on-click-right": "pkill pavucontrol"
 	},
+
 	"memory": {
 		"interval": 5,
 		"format": "  {}%"
@@ -69,21 +73,30 @@
 		"interval": 5,
 		"format": " {usage:2}%"
 	},
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-        "activated": "",
-        "deactivated": ""
-    }
+	"temperature": {
+		"format": " {temperatureC}°",
+		"hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input"
+	},
+
+	"hyprland/window": {
+		"separate-outputs": true,
+		"icon": false
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+		"activated": "",
+		"deactivated": ""
+		}
 	},
 	"tray": {
 		"icon-size": 20,
-    "spacing": 10
+		"spacing": 10
 	},
-  "custom/power":{
-    "format":" ",
-    "on-click": "wlogout -b 5"
-  },
+	"custom/power":{
+	"format":" ",
+	"on-click": "wlogout -b 5"
+	},
 	"custom/notification": {
 		"tooltip": false,
 		"format": "{icon}",
