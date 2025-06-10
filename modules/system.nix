@@ -52,6 +52,8 @@
   services.displayManager.sddm.enable = true;
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
+  # i3
+  services.xserver.windowManager.i3.enable = true;
 
   # sound
   services.pipewire = {

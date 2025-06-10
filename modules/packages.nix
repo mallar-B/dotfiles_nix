@@ -46,6 +46,11 @@ in {
     cloudflare-warp
     feh
     firefox
+    glfw
+    glfw-wayland
+    glfw-wayland-minecraft
+    glfw3-minecraft
+    i3
     kitty
     localsend
     # mate.mate-polkit
@@ -53,10 +58,12 @@ in {
     mpv
     nemo
     pavucontrol
+    picom
     swaynotificationcenter
     swayosd
     tmux
     vivaldi
+    xorg.xinit
     zoxide
   ];
 
