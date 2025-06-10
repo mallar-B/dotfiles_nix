@@ -56,16 +56,16 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       600px;
+    width:                       900px;
     x-offset:                    0px;
     y-offset:                    0px;
 
     /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
-    padding:                     0px;
+    padding:                     10px;
     border:                      1px solid;
-    border-radius:               0px;
+    border-radius:               15px;
     border-color:                @border-colour;
     cursor:                      "default";
     background-color:            @background-colour;
@@ -74,7 +74,7 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     5px;
+    spacing:                     10px;
     margin:                      0px;
     padding:                     5px;
     border:                      0px solid;
@@ -90,7 +90,7 @@ inputbar {
     spacing:                     10px;
     margin:                      0px;
     padding:                     5px;
-    border:                      0px 0px 1px dash 0px;
+    border:                      0px 0px 1px 0px;
     border-radius:               0px;
     border-color:                @border-colour;
     background-color:            @background-colour;
@@ -132,7 +132,7 @@ listview {
     fixed-height:                true;
     fixed-columns:               true;
     
-    spacing:                     0px;
+    spacing:                     10px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
@@ -152,10 +152,10 @@ scrollbar {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     0px;
     margin:                      0px;
     padding:                     5px;
-    border:                      0px solid;
+    border:                      0px 0px 1px dash 0px;
     border-radius:               0px;
     border-color:                @border-colour;
     background-color:            transparent;

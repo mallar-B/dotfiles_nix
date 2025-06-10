@@ -13,6 +13,7 @@ in {
   home.packages = with pkgs; [
     bitwarden
     bitwarden-cli
+    cliphist
     cloudflared
     discord
     foot
